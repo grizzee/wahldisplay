@@ -1,15 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <title>Title</title>
-        <link rel="stylesheet" href="styles.css" />
-        <script src="script.js"></script>
-    </head>
-    <body>
-        <h1 class="title">Hello World</h1>
-        <div id="mainDiv">Hello Div</div>
-        <br />
-        <button onclick="buttonClicked()">Click me</button>
-    </body>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>wahldisplay</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+        #widget-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+    <script>
+        function reloadIframe() {
+            var iframe = document.getElementById('widget-iframe');
+            iframe.src = iframe.src;
+        }
+        setInterval(reloadIframe, 60000); // Reload every 60 seconds
+    </script>
+</head>
+<body>
+    <div id="widget-container">
+        <iframe id="widget-iframe" src="https://results.elections.europa.eu/de/Tools/widget-europa/2019-2024/konstituierende-sitzung/"></iframe>
+    </div>
+</body>
 </html>
